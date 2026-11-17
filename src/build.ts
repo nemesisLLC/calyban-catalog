@@ -12,12 +12,16 @@ import { category } from './categories.ts'
 // Curated items in items/*.json always win over imported ones.
 
 const out = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist'
-const sources = JSON.parse(await readFile('sources.json', 'utf8')) as { mcpRegistry: string; repos: RepoSource[]; minStars?: Record<string, number> }
+const sources = JSON.parse(await readFile('sources.json', 'utf8')) as {
+  mcpRegistry: string; repos: RepoSource[]; minStars?: Record<string, number>; verifiedOwners?: string[]; publishedUrl?: string
+}
+const verifiedOwners = new Set((sources.verifiedOwners ?? []).map(owner => owner.toLowerCase()))
 
 export interface Card {
   id: string; kind: Kind; name: string; description: string; author: string
   icon?: string; stars?: number; category?: string; tags?: string[]; agents: CatalogItem['agents']
   runsCode?: boolean; updated?: string; repo?: string
+  version?: string; verified?: boolean; featured?: boolean; added?: string; trend?: number
   /** Identity used by the app to recognise already-installed things during a scan. */
   match?: string
   /** Name it is installed under (MCP server key, skill folder, file name or plugin id). */
@@ -35,7 +39,7 @@ async function collect(): Promise<CatalogItem[][]> {
   const groups: CatalogItem[][] = [await curated()]
   log(`curated: ${groups[0].length}`)
   try {
-    const registry = await importRegistry(sources.mcpRegistry)
+    const registry = await importRegistry(sources.mcpRegistry, sources.verifiedOwners)
     log(`MCP Registry: ${registry.length}`)
     groups.push(registry)
   } catch (error) { console.error('MCP Registry import failed:', (error as Error).message) }
@@ -138,7 +142,9 @@ function validate(items: CatalogItem[]) {
 const card = (item: CatalogItem): Card => ({
   id: item.id, kind: item.kind, name: item.name, description: item.description, author: item.author,
   icon: item.icon, stars: item.stars, category: item.category, tags: item.tags?.slice(0, 5), agents: item.agents,
-  runsCode: item.runsCode, updated: item.updated?.slice(0, 10), repo: item.repo, match: identity(item.install),
+  runsCode: item.runsCode, updated: item.updated?.slice(0, 10), repo: item.repo, version: item.version,
+  verified: item.verified || undefined, featured: item.featured || undefined, added: item.added, trend: item.trend || undefined,
+  match: identity(item.install),
   installAs: item.install.type === 'plugin' ? `${item.install.plugin}@${item.install.marketplace.name}` : 'name' in item.install ? item.install.name : undefined
 })
 
@@ -153,6 +159,41 @@ const items = (await enrich(merge(groups))).filter(item => {
 })
 // Every item ends up in one of the fixed categories; packs keep "Packs" so the UI can group presets.
 for (const item of items) item.category = item.kind === 'pack' ? 'Packs' : category(item.category, item.name, item.description)
+// Trust and editorial flags.
+for (const item of items) {
+  const isCurated = curatedIds.has(item.id)
+  item.featured = isCurated && (item.kind === 'pack' || item.tags?.includes('featured')) || undefined
+  // Registry MCPs were judged by their proven namespace; everything else by who owns the source repo.
+  item.verified = isCurated || (item.verified ?? (!!item.repo && verifiedOwners.has(item.repo.split('/')[0].toLowerCase()))) || undefined
+}
+
+// "New" and "trending" need memory of earlier builds, which lives in the published site itself.
+const today = new Date().toISOString().slice(0, 10)
+interface Snapshot { date: string; stars: Record<string, number> }
+let baseline: { prev?: Snapshot; cur?: Snapshot } = {}
+if (sources.publishedUrl) {
+  const previous = await fetch(sources.publishedUrl + 'index.json', { signal: AbortSignal.timeout(60_000) })
+    .then(r => r.ok ? r.json() as Promise<{ items: Card[] }> : undefined).catch(() => undefined)
+  if (previous) {
+    const known = new Map(previous.items.map(entry => [entry.id, entry.added]))
+    // Items already published keep their date (or none, if they predate tracking); unseen ids are new today.
+    for (const item of items) item.added = known.has(item.id) ? known.get(item.id) : today
+    log(`new since last build: ${items.filter(item => item.added === today && !known.has(item.id)).length}`)
+  } else console.warn('  previous index unavailable; "added" dates not assigned this build')
+  baseline = await fetch(sources.publishedUrl + 'baseline.json', { signal: AbortSignal.timeout(60_000) })
+    .then(r => r.ok ? r.json() as Promise<typeof baseline> : {}).catch(() => ({}))
+}
+const starsNow: Record<string, number> = {}
+for (const item of items) if (item.repo && item.stars !== undefined) starsNow[item.repo.toLowerCase()] = item.stars
+const reference = baseline.prev ?? baseline.cur
+if (reference) for (const item of items) {
+  const before = item.repo ? reference.stars[item.repo.toLowerCase()] : undefined
+  if (before !== undefined && item.stars !== undefined && item.stars > before) item.trend = item.stars - before
+}
+// Roll the weekly snapshots: trend always compares against stars from 7 to 14 days ago.
+const age = baseline.cur ? (Date.parse(today) - Date.parse(baseline.cur.date)) / 86_400_000 : Infinity
+if (age >= 7) baseline = { prev: baseline.cur, cur: { date: today, stars: starsNow } }
+
 const published = prunePacks(items)
 validate(published)
 items.length = 0
@@ -168,6 +209,7 @@ await mkdir(join(out, 'items'), { recursive: true })
 await writeFile(join(out, 'index.json'), JSON.stringify({ schemaVersion: 1, format: 'index', generatedAt, counts, items: items.map(card) }))
 await pool(items, 64, item => writeFile(join(out, 'items', `${item.id}.json`), JSON.stringify(item)))
 await writeFile(join(out, 'stats.json'), JSON.stringify({ generatedAt, total: items.length, counts }, null, 2))
+await writeFile(join(out, 'baseline.json'), JSON.stringify(baseline))
 await writeFile(join(out, '.nojekyll'), '')
 await writeFile(join(out, 'index.html'), `<!doctype html><meta charset="utf-8"><title>Calyban catalog</title>
 <style>body{font:16px system-ui;max-width:640px;margin:48px auto;padding:0 16px}td{padding:4px 16px 4px 0}</style>

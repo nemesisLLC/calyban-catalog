@@ -7,7 +7,7 @@ import { avatar, firstParagraph, frontmatter, github, oneLine, pool, raw, repoFr
 // and Claude plugin marketplaces from GitHub repos, pinned to the commit seen now.
 
 export interface RepoSource { repo: string; agents?: string; commands?: string }
-interface Tree { tree: { path: string; type: string }[]; truncated: boolean }
+interface Tree { tree: { path: string; type: string; sha: string }[]; truncated: boolean }
 
 const skipFile = /(^|\/)(README|CHANGELOG|CONTRIBUTING|LICENSE|CLAUDE|AGENTS|CODE_OF_CONDUCT|SECURITY|TEMPLATE)[^/]*\.md$/i
 const genericDirs = new Set(['agents', 'commands', 'skills', 'src', 'components', 'cli-tool', 'categories', 'plugins', '.claude'])
@@ -32,14 +32,11 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
   if (tree.truncated) console.warn(`  ${repo}: tree truncated; some files may be missing`)
   const paths = tree.tree.filter(entry => entry.type === 'blob').map(entry => entry.path)
   const items: CatalogItem[] = []
-  const ids = new Set<string>()
-  const uniqueId = (base: string, path: string) => {
-    let id = base
-    if (ids.has(id)) id = slug(`${base}.${posix.dirname(path).split('/').pop()}`, 120)
-    for (let n = 2; ids.has(id); n++) id = `${base}-${n}`
-    ids.add(id)
-    return id
-  }
+  // Ids are assigned after everything is collected, in path order, so the same file gets
+  // the same id on every build no matter which download finishes first.
+  const uniqueId = (base: string, path: string) => `${base}\u0000${path}`
+  // Version = git hash of exactly this file or folder, so "update available" only shows when it really changed.
+  const hashes = new Map(tree.tree.map(entry => [entry.path, entry.sha.slice(0, 12)]))
   const common = { author: owner, repo, icon: avatar(owner), homepage: `https://github.com/${repo}` }
 
   // Skills: every folder with a SKILL.md, except folders nested inside another skill.
@@ -55,7 +52,7 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
     items.push({
       id: uniqueId(slug(`skill.${owner}.${name}`, 120), dir), kind: 'skill', name: titleCase(name), description, ...common,
       license: typeof meta.license === 'string' ? meta.license.slice(0, 60) : undefined,
-      category: category(folderLabel(dir), name, description), tags: ['skill'], agents: ['claude', 'codex'], version: commit,
+      category: category(folderLabel(dir), name, description), tags: ['skill'], agents: ['claude', 'codex'], version: hashes.get(dir) ?? commit,
       install: { type: 'files', repo, ref: commit, path: dir, target: 'skills', name }
     })
   })
@@ -78,7 +75,7 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
       items.push({
         id: uniqueId(slug(`${kind}.${owner}.${name}`, 120), path), kind, name: titleCase(name), description, ...common,
         category: category(folderLabel(path), name, description), tags: [kind === 'agent' ? 'subagent' : 'slash command'],
-        agents: kind === 'agent' ? ['claude'] : ['claude', 'codex'], version: commit,
+        agents: kind === 'agent' ? ['claude'] : ['claude', 'codex'], version: hashes.get(path) ?? commit,
         install: { type: 'files', repo, ref: commit, path, target: kind === 'agent' ? 'agents' : 'commands', name }
       })
     })
@@ -111,6 +108,16 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
         install: { type: 'plugin', marketplace: { name: market.name, repo }, plugin: plugin.name }
       })
     }
+  }
+  const ids = new Set<string>()
+  items.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+  for (const item of items) {
+    const [base, path] = item.id.split('\u0000')
+    let id = base
+    if (ids.has(id)) id = slug(`${base}.${posix.dirname(path).split('/').pop()}`, 120)
+    for (let n = 2; ids.has(id); n++) id = `${base}-${n}`
+    ids.add(id)
+    item.id = id
   }
   return items
 }

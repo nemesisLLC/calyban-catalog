@@ -57,6 +57,14 @@ export interface CatalogItem {
   version?: string
   /** Last upstream update (ISO date), for "recently updated" sorting. */
   updated?: string
+  /** Published by a verified, well-known owner (or hand-picked by Calyban). */
+  verified?: boolean
+  /** Hand-picked by Calyban. */
+  featured?: boolean
+  /** Date the item first appeared in the catalog (ISO date), for "new". */
+  added?: string
+  /** GitHub stars gained over roughly the last week, for "trending". */
+  trend?: number
   agents: Agent[]
   /** True when installing runs third-party code (stdio MCPs, plugins with hooks). */
   runsCode?: boolean

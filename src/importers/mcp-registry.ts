@@ -90,7 +90,15 @@ function authorOf(name: string) {
   return github ? github[1] : namespace.split('.').reverse().join('.')
 }
 
-export async function importRegistry(base: string): Promise<CatalogItem[]> {
+export async function importRegistry(base: string, verifiedOwners: string[] = []): Promise<CatalogItem[]> {
+  const trusted = new Set(verifiedOwners.map(owner => owner.toLowerCase()))
+  // Registry namespaces are proven: io.github.<owner> by GitHub login, com.<company> by DNS.
+  const verifiedName = (name: string) => {
+    const namespace = name.split('/')[0].toLowerCase()
+    const github = /^io\.github\.(.+)$/.exec(namespace)?.[1]
+    const company = /^com\.([a-z0-9-]+)$/.exec(namespace)?.[1]
+    return trusted.has(github ?? company ?? '')
+  }
   const items: CatalogItem[] = []
   let cursor: string | undefined
   let pages = 0
@@ -117,7 +125,7 @@ export async function importRegistry(base: string): Promise<CatalogItem[]> {
         icon: server.icons?.find(icon => /^https:/.test(icon.src))?.src ?? avatar(repo ? ownerOf(repo) : /^io\.github\./.test(server.name) ? author : undefined),
         category: inferCategory(server.title, description), tags: ['mcp', recipe.install.type === 'mcp-remote' ? 'hosted' : 'local'],
         agents: recipe.install.type === 'mcp-remote' && recipe.install.transport === 'sse' ? ['claude'] : ['claude', 'codex'], credits: `Listed in the official MCP Registry as ${server.name}.`,
-        updated: official?.updatedAt, ...recipe
+        updated: official?.updatedAt, verified: verifiedName(server.name), ...recipe
       } as CatalogItem)
     }
     cursor = page.metadata.nextCursor
