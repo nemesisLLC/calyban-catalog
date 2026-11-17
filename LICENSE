@@ -1,0 +1,21 @@
+Calyban catalog
+Copyright (c) 2026 nemesisLLC. All rights reserved.
+
+This repository is published so the Calyban app can download its catalog. Being able to
+read it does not grant any license to it.
+
+1. Code. The build scripts, importers, ranking and curation logic (everything under src/,
+   plus sources.json and the workflow files) are proprietary to nemesisLLC. You may not
+   copy, modify, redistribute or reuse them, in whole or in part, without written
+   permission from nemesisLLC.
+
+2. Compiled catalog. The published catalog (index.json, items/*.json, stats.json) and the
+   curated entries under items/ are a compilation owned by nemesisLLC, provided for use by
+   the official Calyban application. You may not republish, mirror, resell or build a
+   competing catalog or product from it.
+
+3. Listed projects. Each listed MCP server, skill, subagent, command and plugin belongs to
+   its own authors and stays under its own license. The catalog stores only metadata and
+   links to the original sources; credit and licenses always point back to them.
+
+"Calyban" and the Calyban logo are trademarks of nemesisLLC.

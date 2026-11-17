@@ -29,3 +29,7 @@ Questions, ideas or a capability you want added? Join the [Calyban Discord](http
 ## Support Calyban
 
 Calyban and this catalog are free. If Calyban saves you time, you can [buy me a coffee](https://buymeacoffee.com/calyban).
+
+## License
+
+The catalog code and the compiled catalog are proprietary to nemesisLLC (see [LICENSE](LICENSE)). Each listed project keeps its own license.
