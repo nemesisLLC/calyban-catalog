@@ -32,4 +32,4 @@ Calyban and this catalog are free. If Calyban saves you time, you can [buy me a 
 
 ## License
 
-The catalog code and the compiled catalog are proprietary to nemesisLLC (see [LICENSE](LICENSE)). Each listed project keeps its own license.
+You can use this catalog, and the code that builds it, in your own project **only if your product visibly credits it**: show "Catalog powered by Calyban" with a link to [calyban.com](https://calyban.com), and say so at the top of your README. All other rights are reserved. Each listed project keeps its own license. Full terms are in [LICENSE](LICENSE).

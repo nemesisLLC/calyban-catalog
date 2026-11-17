@@ -1,21 +1,42 @@
 Calyban catalog
-Copyright (c) 2026 nemesisLLC. All rights reserved.
+Copyright (c) 2026 nemesisLLC. All rights reserved, except as granted below.
 
-This repository is published so the Calyban app can download its catalog. Being able to
-read it does not grant any license to it.
+This repository is public so the Calyban app (https://calyban.com) can download its
+catalog. Being able to read it does not by itself grant you any rights.
 
-1. Code. The build scripts, importers, ranking and curation logic (everything under src/,
-   plus sources.json and the workflow files) are proprietary to nemesisLLC. You may not
-   copy, modify, redistribute or reuse them, in whole or in part, without written
+WHAT THIS COVERS
+- "Code": the build scripts, importers, ranking and curation logic (everything under
+  src/, plus sources.json and the workflow files).
+- "Catalog": the published catalog (index.json, items/*.json, stats.json) and the curated
+  entries under items/, which are a compilation owned by nemesisLLC.
+
+1. Use by Calyban. nemesisLLC and the official Calyban app may use the Code and the
+   Catalog without limit.
+
+2. Use by anyone else, only with prominent credit. You may use, copy and adapt the Code
+   and/or the Catalog in your own project only if ALL of these are true:
+   a. Your product shows, where its users will see it (for example on its main
+      screen, about page or catalog page, not only in a licence file), the line:
+          "Catalog powered by Calyban: https://calyban.com"
+      with a working link to https://calyban.com.
+   b. The first section of your README or documentation states that your project uses
+      the Calyban catalog and links to https://calyban.com and to this repository.
+   c. You keep this licence and the copyright notice above with any copy of the Code
+      or Catalog you distribute.
+   d. You do not use the name "Calyban" or the Calyban logo to name or brand your own
+      product, or suggest that nemesisLLC endorses it.
+   If any of these stop being true, your permission ends automatically.
+
+3. Everything else is reserved. Any use not allowed by section 2 (for example
+   republishing the Catalog without the required credit, or reselling it) needs written
    permission from nemesisLLC.
 
-2. Compiled catalog. The published catalog (index.json, items/*.json, stats.json) and the
-   curated entries under items/ are a compilation owned by nemesisLLC, provided for use by
-   the official Calyban application. You may not republish, mirror, resell or build a
-   competing catalog or product from it.
+4. Listed projects. Each listed MCP server, skill, subagent, command and plugin belongs to
+   its own authors and stays under its own licence. The Catalog stores only metadata and
+   links to the original sources; credit and licences always point back to them.
 
-3. Listed projects. Each listed MCP server, skill, subagent, command and plugin belongs to
-   its own authors and stays under its own license. The catalog stores only metadata and
-   links to the original sources; credit and licenses always point back to them.
+5. No warranty. THE CODE AND CATALOG ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+   IN NO EVENT SHALL NEMESISLLC BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+   ARISING FROM THEIR USE.
 
 "Calyban" and the Calyban logo are trademarks of nemesisLLC.
