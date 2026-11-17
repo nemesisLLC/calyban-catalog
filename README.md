@@ -18,14 +18,4 @@ Every 6 hours a GitHub Action does the following:
 
 The catalog stores **metadata only**. Skills, subagents and commands are downloaded by the app from the original GitHub repo, at the exact commit recorded here, when a user installs them. Credit, author and licence always point to the original project.
 
-## Adding things
-
-- **A whole repo of skills, subagents, commands or a plugin marketplace:** add it to `sources.json`. The defaults find `SKILL.md` folders, `agents/*.md`, `commands/*.md` and `.claude-plugin/marketplace.json`, and you can give path patterns for unusual layouts.
-- **A single item or a preset pack:** add `items/<id>.json`. It must use one of the install recipes: `mcp-stdio`, `mcp-remote`, `files`, `plugin` or `pack` (see `src/types.ts`). Pin exact package versions.
-
-Then run:
-
-```bash
-npm ci
-GITHUB_TOKEN=$(gh auth token) npm run build
-```
+Maintained by nemesisLLC. Changes to this catalog are made only by the maintainer.
