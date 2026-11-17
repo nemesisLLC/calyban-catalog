@@ -1,0 +1,24 @@
+{
+  "id": "mcp.microsoft-learn",
+  "kind": "mcp",
+  "name": "Microsoft Learn",
+  "author": "Microsoft",
+  "description": "Search official Microsoft and Azure documentation.",
+  "homepage": "https://learn.microsoft.com/en-us/training/support/mcp",
+  "icon": "https://github.com/microsoft.png",
+  "category": "Documentation",
+  "tags": [
+    "docs",
+    "azure",
+    "dotnet"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "microsoft-learn",
+    "url": "https://learn.microsoft.com/api/mcp"
+  }
+}

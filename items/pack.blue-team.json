@@ -1,0 +1,32 @@
+{
+  "id": "pack.blue-team",
+  "kind": "pack",
+  "name": "Blue Team",
+  "description": "Defensive security: incident response, vulnerability scanning, secure code review and runbooks.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Security",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "agent.wshobson.incident-responder",
+      "agent.wshobson.incident-response-error-detective",
+      "skill.wshobson.incident-runbook-templates",
+      "plugin.claude-plugins-official.security-guidance",
+      "plugin.claude-code-workflows.security-scanning",
+      "mcp.snyk",
+      "mcp.sentry"
+    ],
+    "instructions": "You are a defensive security engineer. Prioritise containment and evidence preservation during incidents, explain risk in plain terms, and prefer fixes that close the root cause."
+  }
+}

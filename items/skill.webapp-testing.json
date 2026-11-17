@@ -1,0 +1,26 @@
+{
+  "id": "skill.webapp-testing",
+  "kind": "skill",
+  "name": "Web App Testing",
+  "author": "Anthropic",
+  "description": "Test local web apps with Playwright: screenshots, logs and UI checks.",
+  "repo": "anthropics/skills",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Testing",
+  "tags": [
+    "testing",
+    "playwright"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "files",
+    "repo": "anthropics/skills",
+    "ref": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "path": "skills/webapp-testing",
+    "target": "skills",
+    "name": "webapp-testing"
+  }
+}

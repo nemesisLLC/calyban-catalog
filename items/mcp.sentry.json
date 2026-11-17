@@ -1,0 +1,23 @@
+{
+  "id": "mcp.sentry",
+  "kind": "mcp",
+  "name": "Sentry",
+  "author": "Sentry",
+  "description": "Investigate errors and performance issues from Sentry. Sign in through your agent.",
+  "repo": "getsentry/sentry-mcp",
+  "icon": "https://github.com/getsentry.png",
+  "category": "Monitoring",
+  "tags": [
+    "errors",
+    "observability"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "sentry",
+    "url": "https://mcp.sentry.dev/mcp"
+  }
+}

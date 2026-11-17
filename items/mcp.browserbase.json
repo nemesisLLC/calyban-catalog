@@ -1,0 +1,47 @@
+{
+  "id": "mcp.browserbase",
+  "kind": "mcp",
+  "name": "Browserbase",
+  "description": "Cloud browsers your agent can drive for scraping and automation.",
+  "author": "Browserbase",
+  "repo": "browserbase/mcp-server-browserbase",
+  "homepage": "https://github.com/browserbase/mcp-server-browserbase",
+  "icon": "https://github.com/browserbase.png?size=128",
+  "category": "Browser & Web",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "2.4.3",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "browserbase",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@browserbasehq/mcp-server-browserbase@2.4.3"
+    ],
+    "env": {
+      "BROWSERBASE_API_KEY": "{{BROWSERBASE_API_KEY}}",
+      "BROWSERBASE_PROJECT_ID": "{{BROWSERBASE_PROJECT_ID}}"
+    },
+    "inputs": [
+      {
+        "name": "BROWSERBASE_API_KEY",
+        "description": "Browserbase API key",
+        "secret": true,
+        "required": true
+      },
+      {
+        "name": "BROWSERBASE_PROJECT_ID",
+        "description": "Browserbase project id"
+      }
+    ]
+  }
+}

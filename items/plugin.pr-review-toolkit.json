@@ -1,0 +1,25 @@
+{
+  "id": "plugin.pr-review-toolkit",
+  "kind": "plugin",
+  "name": "PR Review Toolkit",
+  "author": "Anthropic",
+  "description": "Specialised review agents for comments, tests, error handling and types.",
+  "repo": "anthropics/claude-plugins-official",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Code quality",
+  "tags": [
+    "review",
+    "pull requests"
+  ],
+  "agents": [
+    "claude"
+  ],
+  "install": {
+    "type": "plugin",
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "plugin": "pr-review-toolkit"
+  }
+}

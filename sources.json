@@ -1,0 +1,54 @@
+{
+  "$comment": "Where the catalog comes from. Add a repo here to import its skills, subagents, commands or plugin marketplaces. Patterns are regular expressions on file paths; defaults detect SKILL.md folders, agents/*.md and commands/*.md.",
+  "mcpRegistry": "https://registry.modelcontextprotocol.io/v0.1/servers",
+  "repos": [
+    {
+      "repo": "anthropics/skills"
+    },
+    {
+      "repo": "anthropics/claude-plugins-official"
+    },
+    {
+      "repo": "anthropics/claude-code"
+    },
+    {
+      "repo": "openai/skills"
+    },
+    {
+      "repo": "obra/superpowers"
+    },
+    {
+      "repo": "vercel-labs/agent-skills"
+    },
+    {
+      "repo": "ComposioHQ/awesome-claude-skills"
+    },
+    {
+      "repo": "wshobson/agents"
+    },
+    {
+      "repo": "wshobson/commands",
+      "commands": "^(tools|workflows)/[^/]+\\.md$"
+    },
+    {
+      "repo": "VoltAgent/awesome-claude-code-subagents",
+      "agents": "^categories/[^/]+/[^/]+\\.md$"
+    },
+    {
+      "repo": "qdhenry/Claude-Command-Suite"
+    },
+    {
+      "repo": "davila7/claude-code-templates",
+      "agents": "^cli-tool/components/agents/.+\\.md$",
+      "commands": "^cli-tool/components/commands/.+\\.md$"
+    }
+  ],
+  "minStars": {
+    "$comment": "Imported items below these GitHub star counts are left out (curated items are always kept). MCPs without a GitHub repo are also left out.",
+    "mcp": 50,
+    "plugin": 0,
+    "skill": 0,
+    "agent": 0,
+    "command": 0
+  }
+}

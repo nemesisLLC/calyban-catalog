@@ -1,0 +1,27 @@
+{
+  "id": "pack.web-dev",
+  "kind": "pack",
+  "name": "Web Dev Starter",
+  "author": "Calyban",
+  "description": "Browser automation, live docs, frontend design and testing skills in one install.",
+  "category": "Packs",
+  "tags": [
+    "web",
+    "frontend",
+    "starter"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.playwright",
+      "mcp.context7",
+      "skill.frontend-design",
+      "skill.webapp-testing"
+    ]
+  }
+}

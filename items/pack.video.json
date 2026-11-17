@@ -1,0 +1,31 @@
+{
+  "id": "pack.video",
+  "kind": "pack",
+  "name": "Video & Media",
+  "description": "Make and edit media: HTML-to-video, voice and sound, AI image and video models, transcripts and file conversion.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Media & Creative",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.io.github.heygen-com.hyperframes",
+      "mcp.elevenlabs",
+      "mcp.replicate",
+      "mcp.youtube-transcript",
+      "skill.wshobson.file-conversion",
+      "agent.wshobson.image-generator"
+    ],
+    "instructions": "You help produce video, audio and images. Confirm output format, resolution and length up front, keep source assets organised, and never overwrite originals."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "mcp.elevenlabs",
+  "kind": "mcp",
+  "name": "ElevenLabs",
+  "description": "Text to speech, voice cloning, transcription and sound effects.",
+  "author": "ElevenLabs",
+  "repo": "elevenlabs/elevenlabs-mcp",
+  "homepage": "https://github.com/elevenlabs/elevenlabs-mcp",
+  "icon": "https://github.com/elevenlabs.png?size=128",
+  "category": "Media & Creative",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.12.2",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "elevenlabs",
+    "command": "uvx",
+    "args": [
+      "elevenlabs-mcp==0.12.2"
+    ],
+    "env": {
+      "ELEVENLABS_API_KEY": "{{ELEVENLABS_API_KEY}}"
+    },
+    "inputs": [
+      {
+        "name": "ELEVENLABS_API_KEY",
+        "description": "ElevenLabs API key",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

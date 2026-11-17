@@ -1,0 +1,26 @@
+{
+  "id": "skill.skill-creator",
+  "kind": "skill",
+  "name": "Skill Creator",
+  "author": "Anthropic",
+  "description": "Create, test and improve your own agent skills.",
+  "repo": "anthropics/skills",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Meta",
+  "tags": [
+    "skills",
+    "authoring"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "files",
+    "repo": "anthropics/skills",
+    "ref": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "path": "skills/skill-creator",
+    "target": "skills",
+    "name": "skill-creator"
+  }
+}

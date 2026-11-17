@@ -1,0 +1,29 @@
+{
+  "id": "mcp.time",
+  "kind": "mcp",
+  "name": "Time",
+  "author": "Model Context Protocol",
+  "description": "Current time and timezone conversions.",
+  "repo": "modelcontextprotocol/servers",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Utilities",
+  "tags": [
+    "time",
+    "timezone"
+  ],
+  "version": "2026.11.11",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "time",
+    "command": "uvx",
+    "args": [
+      "mcp-server-time==2026.11.11"
+    ]
+  }
+}

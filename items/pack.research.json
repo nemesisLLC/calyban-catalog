@@ -1,0 +1,31 @@
+{
+  "id": "pack.research",
+  "kind": "pack",
+  "name": "Research",
+  "description": "Web research with several search engines, page extraction and structured thinking.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Documentation & Research",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.exa",
+      "mcp.tavily",
+      "mcp.perplexity",
+      "mcp.firecrawl",
+      "mcp.fetch",
+      "mcp.sequential-thinking"
+    ],
+    "instructions": "You are a careful researcher. Cross-check claims across sources, cite links for every fact, and say clearly when evidence is thin or conflicting."
+  }
+}

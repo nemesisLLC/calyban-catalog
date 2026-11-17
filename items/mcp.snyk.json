@@ -1,0 +1,34 @@
+{
+  "id": "mcp.snyk",
+  "kind": "mcp",
+  "name": "Snyk",
+  "description": "Scan code, dependencies, containers and IaC for vulnerabilities with Snyk.",
+  "author": "Snyk",
+  "repo": "snyk/cli",
+  "homepage": "https://github.com/snyk/cli",
+  "icon": "https://github.com/snyk.png?size=128",
+  "category": "Security",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "1.1308.4",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "snyk",
+    "command": "npx",
+    "args": [
+      "-y",
+      "snyk@1.1308.4",
+      "mcp",
+      "-t",
+      "stdio"
+    ]
+  }
+}

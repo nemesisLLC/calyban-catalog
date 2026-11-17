@@ -1,0 +1,25 @@
+{
+  "id": "mcp.stripe",
+  "kind": "mcp",
+  "name": "Stripe",
+  "description": "Work with Stripe customers, payments, subscriptions and docs. Sign in through your agent.",
+  "author": "Stripe",
+  "repo": "stripe/agent-toolkit",
+  "homepage": "https://github.com/stripe/agent-toolkit",
+  "icon": "https://github.com/stripe.png?size=128",
+  "category": "Productivity & Business",
+  "tags": [
+    "mcp",
+    "hosted",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "stripe",
+    "url": "https://mcp.stripe.com"
+  }
+}

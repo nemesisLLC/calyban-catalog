@@ -1,0 +1,23 @@
+{
+  "id": "mcp.openai-docs",
+  "kind": "mcp",
+  "name": "OpenAI Docs",
+  "author": "OpenAI",
+  "description": "Read-only search of the OpenAI developer documentation.",
+  "homepage": "https://developers.openai.com/learn/docs-mcp",
+  "icon": "https://github.com/openai.png",
+  "category": "Documentation",
+  "tags": [
+    "docs",
+    "openai"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "openai-docs",
+    "url": "https://developers.openai.com/mcp"
+  }
+}

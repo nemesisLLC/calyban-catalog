@@ -1,0 +1,42 @@
+{
+  "id": "mcp.heroku",
+  "kind": "mcp",
+  "name": "Heroku",
+  "description": "Manage Heroku apps, add-ons, dynos and databases.",
+  "author": "Heroku",
+  "repo": "heroku/heroku-mcp-server",
+  "homepage": "https://github.com/heroku/heroku-mcp-server",
+  "icon": "https://github.com/heroku.png?size=128",
+  "category": "Cloud & DevOps",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "1.2.14",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "heroku",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@heroku/mcp-server@1.2.14"
+    ],
+    "env": {
+      "HEROKU_API_KEY": "{{HEROKU_API_KEY}}"
+    },
+    "inputs": [
+      {
+        "name": "HEROKU_API_KEY",
+        "description": "Heroku API key",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

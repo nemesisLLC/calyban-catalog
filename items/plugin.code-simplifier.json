@@ -1,0 +1,24 @@
+{
+  "id": "plugin.code-simplifier",
+  "kind": "plugin",
+  "name": "Code Simplifier",
+  "author": "Anthropic",
+  "description": "Agent that refines code for clarity and maintainability.",
+  "repo": "anthropics/claude-plugins-official",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Code quality",
+  "tags": [
+    "refactor"
+  ],
+  "agents": [
+    "claude"
+  ],
+  "install": {
+    "type": "plugin",
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "plugin": "code-simplifier"
+  }
+}

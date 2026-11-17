@@ -1,0 +1,23 @@
+{
+  "id": "mcp.linear",
+  "kind": "mcp",
+  "name": "Linear",
+  "author": "Linear",
+  "description": "Find, create and update Linear issues and projects. Sign in through your agent.",
+  "homepage": "https://linear.app/docs/mcp",
+  "icon": "https://github.com/linear.png",
+  "category": "Project management",
+  "tags": [
+    "issues",
+    "tickets"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "linear",
+    "url": "https://mcp.linear.app/mcp"
+  }
+}

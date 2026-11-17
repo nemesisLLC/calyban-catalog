@@ -1,0 +1,32 @@
+{
+  "id": "mcp.shadcn",
+  "kind": "mcp",
+  "name": "shadcn/ui",
+  "description": "Browse, search and install shadcn/ui components from registries.",
+  "author": "shadcn",
+  "repo": "shadcn-ui/ui",
+  "homepage": "https://github.com/shadcn-ui/ui",
+  "icon": "https://github.com/shadcn-ui.png?size=128",
+  "category": "Design & Frontend",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "4.23.0",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "shadcn",
+    "command": "npx",
+    "args": [
+      "-y",
+      "shadcn@4.23.0",
+      "mcp"
+    ]
+  }
+}

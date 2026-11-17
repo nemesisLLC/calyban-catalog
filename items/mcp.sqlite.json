@@ -1,0 +1,38 @@
+{
+  "id": "mcp.sqlite",
+  "kind": "mcp",
+  "name": "SQLite",
+  "description": "Query and analyse a local SQLite database.",
+  "author": "Model Context Protocol",
+  "repo": "modelcontextprotocol/servers-archived",
+  "homepage": "https://github.com/modelcontextprotocol/servers-archived",
+  "icon": "https://github.com/modelcontextprotocol.png?size=128",
+  "category": "Databases & Data",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "2025.4.25",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "sqlite",
+    "command": "uvx",
+    "args": [
+      "mcp-server-sqlite==2025.4.25",
+      "--db-path",
+      "{{DB_PATH}}"
+    ],
+    "inputs": [
+      {
+        "name": "DB_PATH",
+        "description": "Path to the .db file"
+      }
+    ]
+  }
+}

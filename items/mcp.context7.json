@@ -1,0 +1,25 @@
+{
+  "id": "mcp.context7",
+  "kind": "mcp",
+  "name": "Context7",
+  "author": "Upstash",
+  "description": "Up-to-date library documentation and code examples, hosted.",
+  "repo": "upstash/context7",
+  "homepage": "https://context7.com",
+  "license": "MIT",
+  "icon": "https://github.com/upstash.png",
+  "category": "Documentation",
+  "tags": [
+    "docs",
+    "libraries"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "context7",
+    "url": "https://mcp.context7.com/mcp"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "mcp.filesystem",
+  "kind": "mcp",
+  "name": "Filesystem",
+  "author": "Model Context Protocol",
+  "description": "Read, write and search files in folders you choose.",
+  "repo": "modelcontextprotocol/servers",
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Files",
+  "tags": [
+    "files",
+    "local"
+  ],
+  "version": "2.3.0",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "filesystem",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-filesystem@2.3.0",
+      "{{ALLOWED_DIR}}"
+    ],
+    "inputs": [
+      {
+        "name": "ALLOWED_DIR",
+        "description": "Folder the server may access"
+      }
+    ]
+  }
+}

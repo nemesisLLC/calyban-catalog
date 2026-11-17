@@ -1,0 +1,43 @@
+{
+  "id": "mcp.figma",
+  "kind": "mcp",
+  "name": "Figma Context",
+  "description": "Give your agent Figma layout and design data to implement designs accurately.",
+  "author": "GLips",
+  "repo": "GLips/Figma-Context-MCP",
+  "homepage": "https://github.com/GLips/Figma-Context-MCP",
+  "icon": "https://github.com/GLips.png?size=128",
+  "category": "Design & Frontend",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.13.2",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "figma",
+    "command": "npx",
+    "args": [
+      "-y",
+      "figma-developer-mcp@0.13.2",
+      "--stdio"
+    ],
+    "env": {
+      "FIGMA_API_KEY": "{{FIGMA_API_KEY}}"
+    },
+    "inputs": [
+      {
+        "name": "FIGMA_API_KEY",
+        "description": "Figma personal access token",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

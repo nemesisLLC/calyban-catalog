@@ -1,0 +1,27 @@
+{
+  "id": "skill.frontend-design",
+  "kind": "skill",
+  "name": "Frontend Design",
+  "author": "Anthropic",
+  "description": "Build distinctive, production-grade frontend interfaces.",
+  "repo": "anthropics/skills",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Design",
+  "tags": [
+    "frontend",
+    "ui",
+    "css"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "files",
+    "repo": "anthropics/skills",
+    "ref": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "path": "skills/frontend-design",
+    "target": "skills",
+    "name": "frontend-design"
+  }
+}

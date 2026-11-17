@@ -1,0 +1,28 @@
+{
+  "id": "pack.data",
+  "kind": "pack",
+  "name": "Data",
+  "description": "Databases and analysis: Postgres, SQLite, Supabase and spreadsheet skills.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Databases & Data",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.supabase",
+      "mcp.sqlite",
+      "skill.anthropics.xlsx"
+    ],
+    "instructions": "You work with data carefully. Read before you write, prefer read-only queries while exploring, and show the query behind every number."
+  }
+}

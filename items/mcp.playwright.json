@@ -1,0 +1,31 @@
+{
+  "id": "mcp.playwright",
+  "kind": "mcp",
+  "name": "Playwright",
+  "author": "Microsoft",
+  "description": "Drive a real browser: navigate, click, fill forms and take snapshots.",
+  "repo": "microsoft/playwright-mcp",
+  "license": "Apache-2.0",
+  "icon": "https://github.com/microsoft.png",
+  "category": "Browser automation",
+  "tags": [
+    "browser",
+    "testing",
+    "automation"
+  ],
+  "version": "0.0.85",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "playwright",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@playwright/mcp@0.0.85"
+    ]
+  }
+}

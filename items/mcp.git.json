@@ -1,0 +1,29 @@
+{
+  "id": "mcp.git",
+  "kind": "mcp",
+  "name": "Git",
+  "author": "Model Context Protocol",
+  "description": "Read, search and manipulate Git repositories.",
+  "repo": "modelcontextprotocol/servers",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Developer tools",
+  "tags": [
+    "git",
+    "vcs"
+  ],
+  "version": "2026.11.11",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "git",
+    "command": "uvx",
+    "args": [
+      "mcp-server-git==2026.11.11"
+    ]
+  }
+}

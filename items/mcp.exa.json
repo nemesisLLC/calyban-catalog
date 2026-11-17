@@ -1,0 +1,25 @@
+{
+  "id": "mcp.exa",
+  "kind": "mcp",
+  "name": "Exa Search",
+  "description": "AI-native web and code search, hosted by Exa.",
+  "author": "Exa",
+  "repo": "exa-labs/exa-mcp-server",
+  "homepage": "https://github.com/exa-labs/exa-mcp-server",
+  "icon": "https://github.com/exa-labs.png?size=128",
+  "category": "Documentation & Research",
+  "tags": [
+    "mcp",
+    "hosted",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "exa",
+    "url": "https://mcp.exa.ai/mcp"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "pack.design",
+  "kind": "pack",
+  "name": "Design & Frontend",
+  "description": "Turn designs into polished interfaces: Figma context, shadcn/ui, generated components and frontend design skills.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Design & Frontend",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.figma",
+      "mcp.shadcn",
+      "mcp.21st-magic",
+      "skill.frontend-design",
+      "skill.anthropics.canvas-design",
+      "mcp.playwright"
+    ],
+    "instructions": "You build accessible, production-grade interfaces. Match the design system, check layouts at phone and desktop widths, and verify visually in a browser."
+  }
+}

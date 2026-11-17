@@ -1,0 +1,42 @@
+{
+  "id": "mcp.replicate",
+  "kind": "mcp",
+  "name": "Replicate",
+  "description": "Run thousands of open-source AI models (image, video, audio) on Replicate.",
+  "author": "Replicate",
+  "repo": "replicate/replicate-mcp",
+  "homepage": "https://github.com/replicate/replicate-mcp",
+  "icon": "https://github.com/replicate.png?size=128",
+  "category": "Media & Creative",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.9.0",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "replicate",
+    "command": "npx",
+    "args": [
+      "-y",
+      "replicate-mcp@0.9.0"
+    ],
+    "env": {
+      "REPLICATE_API_TOKEN": "{{REPLICATE_API_TOKEN}}"
+    },
+    "inputs": [
+      {
+        "name": "REPLICATE_API_TOKEN",
+        "description": "Replicate API token",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

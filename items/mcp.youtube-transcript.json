@@ -1,0 +1,31 @@
+{
+  "id": "mcp.youtube-transcript",
+  "kind": "mcp",
+  "name": "YouTube Transcript",
+  "description": "Fetch transcripts and subtitles from YouTube videos.",
+  "author": "kimtaeyoon83",
+  "repo": "kimtaeyoon83/mcp-server-youtube-transcript",
+  "homepage": "https://github.com/kimtaeyoon83/mcp-server-youtube-transcript",
+  "icon": "https://github.com/kimtaeyoon83.png?size=128",
+  "category": "Media & Creative",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.1.1",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "youtube-transcript",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@kimtaeyoon83/mcp-server-youtube-transcript@0.1.1"
+    ]
+  }
+}

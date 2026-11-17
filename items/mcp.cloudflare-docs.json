@@ -1,0 +1,24 @@
+{
+  "id": "mcp.cloudflare-docs",
+  "kind": "mcp",
+  "name": "Cloudflare Docs",
+  "author": "Cloudflare",
+  "description": "Search Cloudflare's developer documentation.",
+  "repo": "cloudflare/mcp-server-cloudflare",
+  "icon": "https://github.com/cloudflare.png",
+  "category": "Documentation",
+  "tags": [
+    "docs",
+    "cloudflare",
+    "workers"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "cloudflare-docs",
+    "url": "https://docs.mcp.cloudflare.com/mcp"
+  }
+}

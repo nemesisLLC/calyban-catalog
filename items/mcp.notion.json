@@ -1,0 +1,41 @@
+{
+  "id": "mcp.notion",
+  "kind": "mcp",
+  "name": "Notion",
+  "author": "Notion",
+  "description": "Search, read and update your Notion workspace.",
+  "repo": "makenotion/notion-mcp-server",
+  "license": "MIT",
+  "icon": "https://github.com/makenotion.png",
+  "category": "Productivity",
+  "tags": [
+    "notion",
+    "docs",
+    "notes"
+  ],
+  "version": "2.6.1",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "notion",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@notionhq/notion-mcp-server@2.6.1"
+    ],
+    "env": {
+      "NOTION_TOKEN": "{{NOTION_TOKEN}}"
+    },
+    "inputs": [
+      {
+        "name": "NOTION_TOKEN",
+        "description": "Notion integration token",
+        "secret": true
+      }
+    ]
+  }
+}

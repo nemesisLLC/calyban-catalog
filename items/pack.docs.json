@@ -1,0 +1,30 @@
+{
+  "id": "pack.docs",
+  "kind": "pack",
+  "name": "Documents & Writing",
+  "description": "Create and edit Word, Excel, PowerPoint and PDF files, and co-author long documents.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Documents & Office",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.anthropics.docx",
+      "skill.anthropics.xlsx",
+      "skill.anthropics.pptx",
+      "skill.pdf",
+      "skill.anthropics.doc-coauthoring"
+    ],
+    "instructions": "You help write and format documents. Keep the author's voice, keep structure consistent, and summarise changes after each edit."
+  }
+}

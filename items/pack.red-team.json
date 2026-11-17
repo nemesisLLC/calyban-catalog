@@ -1,0 +1,37 @@
+{
+  "id": "pack.red-team",
+  "kind": "pack",
+  "name": "Red Team",
+  "description": "Authorized offensive security: recon, web and API testing, cloud and AD attack methodology, and LLM red-teaming.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Security",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.davila7.ethical-hacking-methodology",
+      "skill.davila7.api-fuzzing-bug-bounty",
+      "skill.davila7.idor-testing",
+      "skill.davila7.file-path-traversal",
+      "skill.davila7.cloud-penetration-testing",
+      "skill.davila7.aws-penetration-testing",
+      "skill.davila7.active-directory-attacks",
+      "skill.davila7.linux-privilege-escalation",
+      "skill.davila7.metasploit-framework",
+      "agent.davila7.llm-redteam-specialist",
+      "mcp.fetch",
+      "mcp.playwright"
+    ],
+    "instructions": "This profile supports authorized security testing only. Confirm scope and written authorization before any active testing, stay within the agreed targets, avoid destructive actions, and record findings with evidence and remediation advice."
+  }
+}

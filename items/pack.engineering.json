@@ -1,0 +1,34 @@
+{
+  "id": "pack.engineering",
+  "kind": "pack",
+  "name": "Engineering",
+  "description": "Day-to-day software engineering: GitHub, live docs, browser testing, TDD, debugging and code review.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Developer tools",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "mcp.io.github.github.github-mcp-server",
+      "mcp.context7",
+      "mcp.playwright",
+      "mcp.sequential-thinking",
+      "skill.obra.test-driven-development",
+      "skill.obra.systematic-debugging",
+      "skill.obra.requesting-code-review",
+      "agent.anthropics.code-architect",
+      "agent.anthropics.code-explorer"
+    ],
+    "instructions": "You are a senior software engineer. Prefer small, tested changes. Write a failing test before fixing a bug, debug systematically, and request a review for anything non-trivial."
+  }
+}

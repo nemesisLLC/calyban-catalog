@@ -1,0 +1,40 @@
+{
+  "id": "mcp.21st-magic",
+  "kind": "mcp",
+  "name": "Magic UI builder",
+  "description": "Generate polished UI components from a description, like v0 inside your agent.",
+  "author": "21st.dev",
+  "repo": "21st-dev/magic-mcp",
+  "homepage": "https://github.com/21st-dev/magic-mcp",
+  "icon": "https://github.com/21st-dev.png?size=128",
+  "category": "Design & Frontend",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.2.3",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "magic",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@21st-dev/magic@0.2.3",
+      "API_KEY={{TWENTYFIRST_API_KEY}}"
+    ],
+    "inputs": [
+      {
+        "name": "TWENTYFIRST_API_KEY",
+        "description": "21st.dev API key",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

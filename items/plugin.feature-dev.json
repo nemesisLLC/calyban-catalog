@@ -1,0 +1,25 @@
+{
+  "id": "plugin.feature-dev",
+  "kind": "plugin",
+  "name": "Feature Dev",
+  "author": "Anthropic",
+  "description": "Feature development workflow with agents for exploration, architecture and review.",
+  "repo": "anthropics/claude-plugins-official",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Workflow",
+  "tags": [
+    "agents",
+    "workflow"
+  ],
+  "agents": [
+    "claude"
+  ],
+  "install": {
+    "type": "plugin",
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "plugin": "feature-dev"
+  }
+}

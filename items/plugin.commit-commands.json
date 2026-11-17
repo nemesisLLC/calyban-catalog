@@ -1,0 +1,25 @@
+{
+  "id": "plugin.commit-commands",
+  "kind": "plugin",
+  "name": "Commit Commands",
+  "author": "Anthropic",
+  "description": "Slash commands for commit, push and PR creation.",
+  "repo": "anthropics/claude-plugins-official",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Git",
+  "tags": [
+    "git",
+    "commands"
+  ],
+  "agents": [
+    "claude"
+  ],
+  "install": {
+    "type": "plugin",
+    "marketplace": {
+      "name": "claude-plugins-official",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "plugin": "commit-commands"
+  }
+}

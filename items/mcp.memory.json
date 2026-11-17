@@ -1,0 +1,30 @@
+{
+  "id": "mcp.memory",
+  "kind": "mcp",
+  "name": "Memory",
+  "author": "Model Context Protocol",
+  "description": "Persistent knowledge-graph memory across sessions.",
+  "repo": "modelcontextprotocol/servers",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Memory",
+  "tags": [
+    "memory",
+    "knowledge graph"
+  ],
+  "version": "2.1.1",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "memory",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-memory@2.1.1"
+    ]
+  }
+}

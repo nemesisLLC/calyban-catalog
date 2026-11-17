@@ -1,0 +1,51 @@
+{
+  "id": "mcp.n8n",
+  "kind": "mcp",
+  "name": "n8n",
+  "description": "Build and manage n8n automation workflows with knowledge of 500+ nodes.",
+  "author": "czlonkowski",
+  "repo": "czlonkowski/n8n-mcp",
+  "homepage": "https://github.com/czlonkowski/n8n-mcp",
+  "icon": "https://github.com/czlonkowski.png?size=128",
+  "category": "Productivity & Business",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "2.102.0",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "n8n",
+    "command": "npx",
+    "args": [
+      "-y",
+      "n8n-mcp@2.102.0"
+    ],
+    "env": {
+      "MCP_MODE": "stdio",
+      "LOG_LEVEL": "error",
+      "DISABLE_CONSOLE_OUTPUT": "true",
+      "N8N_API_URL": "{{N8N_API_URL}}",
+      "N8N_API_KEY": "{{N8N_API_KEY}}"
+    },
+    "inputs": [
+      {
+        "name": "N8N_API_URL",
+        "description": "Your n8n URL (optional, for managing workflows)",
+        "required": false
+      },
+      {
+        "name": "N8N_API_KEY",
+        "description": "n8n API key (optional)",
+        "secret": true,
+        "required": false
+      }
+    ]
+  }
+}

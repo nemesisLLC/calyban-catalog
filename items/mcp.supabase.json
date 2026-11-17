@@ -1,0 +1,25 @@
+{
+  "id": "mcp.supabase",
+  "kind": "mcp",
+  "name": "Supabase",
+  "description": "Manage Supabase projects, databases, auth and edge functions. Sign in through your agent.",
+  "author": "Supabase",
+  "repo": "supabase-community/supabase-mcp",
+  "homepage": "https://github.com/supabase-community/supabase-mcp",
+  "icon": "https://github.com/supabase-community.png?size=128",
+  "category": "Databases & Data",
+  "tags": [
+    "mcp",
+    "hosted",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "mcp-remote",
+    "name": "supabase",
+    "url": "https://mcp.supabase.com/mcp"
+  }
+}

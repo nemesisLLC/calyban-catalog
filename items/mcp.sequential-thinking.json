@@ -1,0 +1,30 @@
+{
+  "id": "mcp.sequential-thinking",
+  "kind": "mcp",
+  "name": "Sequential Thinking",
+  "author": "Model Context Protocol",
+  "description": "Structured step-by-step reasoning tool for hard problems.",
+  "repo": "modelcontextprotocol/servers",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Reasoning",
+  "tags": [
+    "thinking",
+    "planning"
+  ],
+  "version": "2.1.1",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "sequential-thinking",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-sequential-thinking@2.1.1"
+    ]
+  }
+}

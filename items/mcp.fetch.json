@@ -1,0 +1,30 @@
+{
+  "id": "mcp.fetch",
+  "kind": "mcp",
+  "name": "Fetch",
+  "author": "Model Context Protocol",
+  "description": "Fetch web pages and convert them to markdown for the agent.",
+  "repo": "modelcontextprotocol/servers",
+  "license": "MIT",
+  "icon": "https://github.com/modelcontextprotocol.png",
+  "category": "Web",
+  "tags": [
+    "web",
+    "http",
+    "scrape"
+  ],
+  "version": "2026.11.11",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "fetch",
+    "command": "uvx",
+    "args": [
+      "mcp-server-fetch==2026.11.11"
+    ]
+  }
+}

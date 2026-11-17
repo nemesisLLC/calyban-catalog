@@ -1,0 +1,26 @@
+{
+  "id": "skill.pdf",
+  "kind": "skill",
+  "name": "PDF",
+  "author": "Anthropic",
+  "description": "Read, create, merge, split and fill PDF files.",
+  "repo": "anthropics/skills",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Documents",
+  "tags": [
+    "pdf",
+    "documents"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "files",
+    "repo": "anthropics/skills",
+    "ref": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "path": "skills/pdf",
+    "target": "skills",
+    "name": "pdf"
+  }
+}

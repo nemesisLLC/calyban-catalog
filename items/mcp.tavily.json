@@ -1,0 +1,42 @@
+{
+  "id": "mcp.tavily",
+  "kind": "mcp",
+  "name": "Tavily",
+  "description": "Web search, extraction and crawling built for agents.",
+  "author": "Tavily",
+  "repo": "tavily-ai/tavily-mcp",
+  "homepage": "https://github.com/tavily-ai/tavily-mcp",
+  "icon": "https://github.com/tavily-ai.png?size=128",
+  "category": "Documentation & Research",
+  "tags": [
+    "mcp",
+    "local",
+    "featured"
+  ],
+  "version": "0.2.22",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "tavily",
+    "command": "npx",
+    "args": [
+      "-y",
+      "tavily-mcp@0.2.22"
+    ],
+    "env": {
+      "TAVILY_API_KEY": "{{TAVILY_API_KEY}}"
+    },
+    "inputs": [
+      {
+        "name": "TAVILY_API_KEY",
+        "description": "Tavily API key",
+        "secret": true,
+        "required": true
+      }
+    ]
+  }
+}

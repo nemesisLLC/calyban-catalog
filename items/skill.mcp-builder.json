@@ -1,0 +1,26 @@
+{
+  "id": "skill.mcp-builder",
+  "kind": "skill",
+  "name": "MCP Builder",
+  "author": "Anthropic",
+  "description": "Guide for building high-quality MCP servers.",
+  "repo": "anthropics/skills",
+  "icon": "https://github.com/anthropics.png",
+  "category": "Developer tools",
+  "tags": [
+    "mcp",
+    "servers"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "install": {
+    "type": "files",
+    "repo": "anthropics/skills",
+    "ref": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "path": "skills/mcp-builder",
+    "target": "skills",
+    "name": "mcp-builder"
+  }
+}
