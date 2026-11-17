@@ -62,9 +62,20 @@ function merge(groups: CatalogItem[][]): CatalogItem[] {
   const ids = new Set<string>()
   const identities = new Set<string>()
   const merged: CatalogItem[] = []
+  const byIdentity = new Map<string, CatalogItem>()
   for (const item of groups.flat()) {
     const key = identity(item.install)
-    if (ids.has(item.id) || (key && identities.has(key))) continue
+    if (ids.has(item.id) || (key && identities.has(key))) {
+      // A hand-picked skill/helper/command pins an old commit and has no version, so users would never
+      // see updates. Take the imported copy's current commit and content hash; keep the curated wording.
+      const kept = key ? byIdentity.get(key) : undefined
+      if (kept && !kept.version && item.version && kept.install.type === 'files' && item.install.type === 'files') {
+        kept.install = { ...kept.install, ref: item.install.ref }
+        kept.version = item.version
+      }
+      continue
+    }
+    if (key) byIdentity.set(key, item)
     ids.add(item.id)
     if (key) identities.add(key)
     merged.push(item)

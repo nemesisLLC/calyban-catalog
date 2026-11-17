@@ -2,7 +2,7 @@
 
 The public capability catalog for [Calyban](https://github.com/nemesisLLC/Calyban): MCP servers, skills, subagents, slash commands, plugins and preset packs for Claude Code and Codex.
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-calyban-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/calyban)
+[![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=fff)](https://discord.gg/pHDNtgYvWn) [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-calyban-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/calyban)
 
 **Live catalog:** https://nemesisllc.github.io/calyban-catalog/ is rebuilt every 6 hours.
 
@@ -21,6 +21,10 @@ Every 6 hours a GitHub Action does the following:
 The catalog stores **metadata only**. Skills, subagents and commands are downloaded by the app from the original GitHub repo, at the exact commit recorded here, when a user installs them. Credit, author and licence always point to the original project.
 
 Maintained by nemesisLLC. Changes to this catalog are made only by the maintainer.
+
+## Community
+
+Questions, ideas or a capability you want added? Join the [Calyban Discord](https://discord.gg/pHDNtgYvWn).
 
 ## Support Calyban
 
