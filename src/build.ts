@@ -219,7 +219,12 @@ await rm(out, { recursive: true, force: true })
 await mkdir(join(out, 'items'), { recursive: true })
 await writeFile(join(out, 'index.json'), JSON.stringify({ schemaVersion: 1, format: 'index', generatedAt, counts, items: items.map(card) }))
 await pool(items, 64, item => writeFile(join(out, 'items', `${item.id}.json`), JSON.stringify(item)))
-await writeFile(join(out, 'stats.json'), JSON.stringify({ generatedAt, total: items.length, counts }, null, 2))
+// What's new, for the website's live catalog section: additions in the last 7 days and the newest names.
+const weekAgo = new Date(Date.now() - 7 * 86_400_000).toISOString().slice(0, 10)
+const recent = items.filter(item => item.added && item.added >= weekAgo && item.install.type !== 'pack')
+  .sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '') || (b.stars ?? 0) - (a.stars ?? 0))
+const newest = recent.slice(0, 12).map(item => ({ name: item.name, kind: item.kind, author: item.author }))
+await writeFile(join(out, 'stats.json'), JSON.stringify({ generatedAt, total: items.length, counts, newThisWeek: recent.length, newest }, null, 2))
 await writeFile(join(out, 'baseline.json'), JSON.stringify(baseline))
 await writeFile(join(out, '.nojekyll'), '')
 await writeFile(join(out, 'index.html'), `<!doctype html><meta charset="utf-8"><title>Calyban catalog</title>
