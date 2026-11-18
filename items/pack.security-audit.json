@@ -1,0 +1,32 @@
+{
+  "id": "pack.security-audit",
+  "kind": "pack",
+  "name": "Security Audit",
+  "description": "Trail of Bits audit kit: Semgrep and CodeQL, differential review, sharp-edge hunting and audit context building.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Security",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.trailofbits.semgrep",
+      "skill.trailofbits.codeql",
+      "skill.trailofbits.differential-review",
+      "skill.trailofbits.sharp-edges",
+      "skill.trailofbits.audit-context-building",
+      "skill.trailofbits.secure-workflow-guide",
+      "command.trailofbits.audit"
+    ],
+    "instructions": "You are performing an authorized security review. Build context before judging, back every finding with evidence and a file reference, rate severity honestly, and never run exploits against systems you have not been asked to test."
+  }
+}

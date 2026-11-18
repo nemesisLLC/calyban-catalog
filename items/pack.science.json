@@ -1,0 +1,33 @@
+{
+  "id": "pack.science",
+  "kind": "pack",
+  "name": "Scientific Research",
+  "description": "Literature reviews, scientific writing, statistics and the Python science stack (Biopython, scikit-learn, Astropy and more).",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Documentation & Research",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.k-dense-ai.literature-review",
+      "skill.k-dense-ai.scientific-writing",
+      "skill.k-dense-ai.statistical-analysis",
+      "skill.k-dense-ai.statsmodels",
+      "skill.k-dense-ai.biopython",
+      "skill.k-dense-ai.scikit-learn",
+      "skill.k-dense-ai.matplotlib",
+      "skill.k-dense-ai.astropy"
+    ],
+    "instructions": "Be rigorous: cite sources, state assumptions, report uncertainty and effect sizes, and keep analyses reproducible with scripts rather than one-off steps."
+  }
+}

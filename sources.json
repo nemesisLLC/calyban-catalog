@@ -41,6 +41,90 @@
       "repo": "davila7/claude-code-templates",
       "agents": "^cli-tool/components/agents/.+\\.md$",
       "commands": "^cli-tool/components/commands/.+\\.md$"
+    },
+    {
+      "repo": "affaan-m/ECC",
+      "exclude": [
+        "docs/",
+        "pi/",
+        ".kiro/",
+        ".cursor/",
+        ".opencode/",
+        ".gemini/",
+        ".windsurf/"
+      ]
+    },
+    {
+      "repo": "mattpocock/skills"
+    },
+    {
+      "repo": "DietrichGebert/ponytail"
+    },
+    {
+      "repo": "multica-ai/andrej-karpathy-skills"
+    },
+    {
+      "repo": "anthropics/knowledge-work-plugins"
+    },
+    {
+      "repo": "microsoft/skills"
+    },
+    {
+      "repo": "alirezarezvani/claude-skills",
+      "exclude": [
+        ".gemini/",
+        ".codex/",
+        ".cursor/",
+        ".kiro/"
+      ]
+    },
+    {
+      "repo": "coreyhaines31/marketingskills"
+    },
+    {
+      "repo": "K-Dense-AI/scientific-agent-skills"
+    },
+    {
+      "repo": "trailofbits/skills"
+    },
+    {
+      "repo": "huggingface/skills"
+    },
+    {
+      "repo": "Jeffallan/claude-skills"
+    },
+    {
+      "repo": "stripe/ai"
+    },
+    {
+      "repo": "cloudflare/skills"
+    },
+    {
+      "repo": "expo/skills"
+    },
+    {
+      "repo": "callstackincubator/agent-skills"
+    },
+    {
+      "repo": "supabase/agent-skills"
+    },
+    {
+      "repo": "google-gemini/gemini-skills"
+    },
+    {
+      "repo": "daymade/claude-code-skills"
+    },
+    {
+      "repo": "0xfurai/claude-code-subagents"
+    },
+    {
+      "repo": "lst97/claude-code-sub-agents"
+    },
+    {
+      "repo": "vijaythecoder/awesome-claude-agents"
+    },
+    {
+      "repo": "glittercowboy/taches-cc-resources"
     }
   ],
   "minStars": {

@@ -1,0 +1,33 @@
+{
+  "id": "pack.marketing",
+  "kind": "pack",
+  "name": "Marketing & Growth",
+  "description": "SEO audits, AI search optimisation, copywriting, content strategy, A/B testing and competitor research.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Productivity & Business",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.coreyhaines31.seo-audit",
+      "skill.coreyhaines31.ai-seo",
+      "skill.coreyhaines31.copywriting",
+      "skill.coreyhaines31.content-strategy",
+      "skill.coreyhaines31.ab-testing",
+      "skill.coreyhaines31.analytics",
+      "skill.coreyhaines31.competitors",
+      "skill.coreyhaines31.cold-email"
+    ],
+    "instructions": "Write for real customers: clear benefits, specific claims you can back up, no hype words. Measure before and after every change."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "pack.mobile",
+  "kind": "pack",
+  "name": "Mobile Apps",
+  "description": "Build iOS and Android apps with Expo and React Native: UI, routing, native modules, testing and store releases.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Languages & Frameworks",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.expo.expo-ui",
+      "skill.expo.expo-router",
+      "skill.expo.expo-native-ui",
+      "skill.expo.eas-app-stores",
+      "skill.callstackincubator.react-native-best-practices",
+      "skill.callstackincubator.react-native-testing",
+      "skill.callstackincubator.upgrading-react-native"
+    ],
+    "instructions": "Target both iOS and Android. Prefer Expo APIs and platform conventions, keep screens accessible, and test on a device or simulator before calling something done."
+  }
+}

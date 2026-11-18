@@ -6,7 +6,14 @@ import { avatar, firstParagraph, frontmatter, github, oneLine, pool, raw, repoFr
 // Imports skills (folders with SKILL.md), subagents and slash commands (markdown files)
 // and Claude plugin marketplaces from GitHub repos, pinned to the commit seen now.
 
-export interface RepoSource { repo: string; agents?: string; commands?: string }
+export interface RepoSource {
+  repo: string; agents?: string; commands?: string
+  /** Path prefixes to skip: translations (docs/ja-JP/…) and copies made for other tools (.kiro/, .gemini/…). */
+  exclude?: string[]
+}
+
+// Never import translated copies of docs, whatever the repo.
+const translatedDocs = /^docs\/(i18n\/)?[a-z]{2}(-[A-Za-z]{2,4})?\//
 interface Tree { tree: { path: string; type: string; sha: string }[]; truncated: boolean }
 
 const skipFile = /(^|\/)(README|CHANGELOG|CONTRIBUTING|LICENSE|CLAUDE|AGENTS|CODE_OF_CONDUCT|SECURITY|TEMPLATE)[^/]*\.md$/i
@@ -30,7 +37,8 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
   const commit = (await github<{ sha: string }>(`/repos/${repo}/commits/HEAD`)).sha
   const tree = await github<Tree>(`/repos/${repo}/git/trees/${commit}?recursive=1`)
   if (tree.truncated) console.warn(`  ${repo}: tree truncated; some files may be missing`)
-  const paths = tree.tree.filter(entry => entry.type === 'blob').map(entry => entry.path)
+  const excluded = (path: string) => translatedDocs.test(path) || (source.exclude ?? []).some(prefix => path.startsWith(prefix))
+  const paths = tree.tree.filter(entry => entry.type === 'blob' && !excluded(entry.path)).map(entry => entry.path)
   const items: CatalogItem[] = []
   // Ids are assigned after everything is collected, in path order, so the same file gets
   // the same id on every build no matter which download finishes first.
@@ -109,6 +117,16 @@ export async function importRepo(source: RepoSource): Promise<CatalogItem[]> {
       })
     }
   }
+  // One copy per name and kind: repos often keep the same skill in several folders. Keep the shortest path.
+  const byName = new Map<string, CatalogItem>()
+  for (const item of items) {
+    const key = `${item.kind}:${item.name.toLowerCase()}`
+    const path = item.install.type === 'files' ? item.install.path : ''
+    const kept = byName.get(key)
+    const keptPath = kept?.install.type === 'files' ? kept.install.path : ''
+    if (!kept || (path && path.length < keptPath.length) || (path.length === keptPath.length && path < keptPath)) byName.set(key, item)
+  }
+  items.splice(0, items.length, ...byName.values())
   const ids = new Set<string>()
   items.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
   for (const item of items) {

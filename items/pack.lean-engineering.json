@@ -1,0 +1,32 @@
+{
+  "id": "pack.lean-engineering",
+  "kind": "pack",
+  "name": "Lean Engineering",
+  "description": "Write less, ship more: ponytail minimalism, Karpathy-style guardrails, a codebase knowledge graph and disciplined debugging.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Developer tools",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.dietrichgebert.ponytail",
+      "skill.dietrichgebert.ponytail-review",
+      "skill.multica-ai.karpathy-guidelines",
+      "skill.graphify",
+      "skill.obra.systematic-debugging",
+      "skill.obra.test-driven-development",
+      "skill.obra.brainstorming"
+    ],
+    "instructions": "Prefer the smallest change that works. Reuse existing code, the standard library and platform features before writing anything new. Read the codebase map before changing architecture, and prove fixes with a failing test first."
+  }
+}

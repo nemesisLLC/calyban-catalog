@@ -1,0 +1,21 @@
+{
+  "id": "skill.graphify",
+  "kind": "skill",
+  "name": "Graphify",
+  "author": "Graphify Labs",
+  "description": "Turn any folder of code, docs, papers or media into a knowledge graph your agent can query. Needs Python: pip install graphifyy.",
+  "repo": "Graphify-Labs/graphify",
+  "icon": "https://github.com/Graphify-Labs.png",
+  "category": "Developer tools",
+  "tags": ["knowledge graph", "codebase", "architecture", "graphrag"],
+  "agents": ["claude", "codex"],
+  "featured": true,
+  "install": {
+    "type": "files",
+    "repo": "Graphify-Labs/graphify",
+    "ref": "340268a70a83588d6b3c6de1fffb05326350ef1d",
+    "path": "graphify/skill.md",
+    "target": "skills",
+    "name": "graphify"
+  }
+}

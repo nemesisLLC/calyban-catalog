@@ -1,0 +1,31 @@
+{
+  "id": "pack.cloudflare",
+  "kind": "pack",
+  "name": "Cloudflare & Edge",
+  "description": "Build on Cloudflare: Workers best practices, Wrangler, Durable Objects, the Agents SDK and the wider platform.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Cloud & DevOps",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.cloudflare.cloudflare",
+      "skill.cloudflare.wrangler",
+      "skill.cloudflare.workers-best-practices",
+      "skill.cloudflare.durable-objects",
+      "skill.cloudflare.agents-sdk",
+      "skill.cloudflare.cf-cli"
+    ],
+    "instructions": "Check current Cloudflare docs for limits and APIs before relying on them, keep secrets in Wrangler secrets, and prefer bindings over REST calls inside Workers."
+  }
+}

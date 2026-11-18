@@ -1,0 +1,29 @@
+{
+  "id": "pack.payments",
+  "kind": "pack",
+  "name": "Payments (Stripe)",
+  "description": "Integrate Stripe the right way: best practices, docs, implementation planning and Connect.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "Productivity & Business",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.stripe.stripe-best-practices",
+      "skill.stripe.stripe-docs",
+      "skill.stripe.stripe-implementation-planner",
+      "skill.stripe.connect-recommend"
+    ],
+    "instructions": "Use Stripe test mode keys only while building. Never log card data or secret keys, verify webhooks with their signatures, and handle idempotency for every payment request."
+  }
+}

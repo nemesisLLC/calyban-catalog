@@ -1,0 +1,32 @@
+{
+  "id": "pack.ai-engineering",
+  "kind": "pack",
+  "name": "AI Engineering",
+  "description": "Train, evaluate and ship models with Hugging Face: datasets, Transformers, TRL fine-tuning, Gradio demos and the HF CLI.",
+  "author": "Calyban",
+  "icon": "https://github.com/nemesisLLC.png?size=128",
+  "category": "AI & ML",
+  "tags": [
+    "preset",
+    "pack",
+    "featured"
+  ],
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "pack",
+    "items": [
+      "skill.huggingface.hf-cli",
+      "skill.huggingface.huggingface-datasets",
+      "skill.huggingface.huggingface-llm-trainer",
+      "skill.huggingface.trl-training",
+      "skill.huggingface.huggingface-gradio",
+      "skill.huggingface.transformers-js",
+      "skill.k-dense-ai.transformers"
+    ],
+    "instructions": "Track every experiment: dataset version, hyperparameters and metrics. Start from a small baseline, evaluate on held-out data, and never train on test data."
+  }
+}
