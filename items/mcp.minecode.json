@@ -1,0 +1,49 @@
+{
+  "id": "mcp.minecode",
+  "kind": "mcp",
+  "name": "MineCode",
+  "author": "uruk-king",
+  "description": "Minecraft modding toolkit: reads your Fabric or Paper project, finds version-exact mappings and diagnoses Mixin and build crashes.",
+  "repo": "uruk-king/MineCode",
+  "license": "MIT",
+  "icon": "https://github.com/uruk-king.png",
+  "category": "Languages & Frameworks",
+  "tags": [
+    "minecraft",
+    "fabric",
+    "paper",
+    "mixin",
+    "gradle",
+    "java"
+  ],
+  "version": "0.4.0rc3",
+  "agents": [
+    "claude",
+    "codex"
+  ],
+  "runsCode": true,
+  "install": {
+    "type": "mcp-stdio",
+    "name": "minecode",
+    "command": "uv",
+    "args": [
+      "run",
+      "--no-project",
+      "--python",
+      ">=3.11",
+      "--with",
+      "minecode-runtime @ git+https://github.com/uruk-king/MineCode@279b42a14da97ec9049fdd098452631288f5b651",
+      "python",
+      "-m",
+      "minecode_runtime",
+      "--project",
+      "{{PROJECT_DIR}}"
+    ],
+    "inputs": [
+      {
+        "name": "PROJECT_DIR",
+        "description": "Your Minecraft mod or plugin project folder"
+      }
+    ]
+  }
+}
